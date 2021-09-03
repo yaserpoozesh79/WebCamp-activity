@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <video poster="poster.jpeg" autoplay loop muted>
+            <source src="footage.mp4" type="video/mp4">
+            <source src="footage.webm" type="video/webm">
+        </video>
+        <div id="dark-curtain"></div>
+        <div class="flex-container">    
+            <div id="content">
+                <h1 class="header">ثبت نام</h1>
+                <p class="header">برای ایجاد یک حساب کاربری اطلاعات زیر را وارد نمایید.</p>
+                <form action="" method="POST">
+                    <div class="grid-container">
+                        <div>
+                            <input class=texty type="text" name="fullname" id="fullname" placeholder="نام و نام خانوادگی">
+                            <small class="error-message" id="em1"></small>
+                        </div class="grid-element">
+
+                        <div>
+                            <input class=texty type="email" name="useremail" id="useremail" placeholder="ایمیل">
+                            <small class="error-message" id="em2">این ایمیل قبلا ثبت شده است</small>
+                        </div>
+                        
+                        <div>
+                            <input class=texty type="password" name="password" id="password" placeholder="رمز عبور">
+                            <small class="error-message" id="em3">رمز عبور با تکرار آن مطابقت ندارد</small>
+                        </div>
+
+                        <div>
+                            <input class=texty type="password" name="password-rp" id="password-rp" placeholder="تکرار رمز عبور">
+                            <small class="error-message" id="em4"></small>
+                        </div>
+                    </div>
+                    <input type="submit" value="ثبت اطلاعات">
+                </form>
+                <p class="footer">حساب دارید؟ <a href="">وارد شوید!</a></p>
+            </div>
+        </div>    
+    </body>
+</html>
