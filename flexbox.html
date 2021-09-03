@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  /* display: inline-block; */
+}
+
+@media (max-width: 800px) {
+  .flex-container > div{
+    flex: 50%
+  }
+}
+</style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div style="order: 2;">1</div>
+        <div style="order: 5;">2</div>
+        <div style="order: 3;">3</div>
+        <div style="order: 7;">4</div>  
+        <div style="order: 6;">5</div> 
+        <div style="order: 1;">6</div> 
+        <div style="order: 9;">7</div> 
+        <div style="order: 10;">8</div>
+        <div style="order: 4;">9</div>
+        <div style="order: 8;">10</div>
+        
+    </div>
+
+</body>
+</html>

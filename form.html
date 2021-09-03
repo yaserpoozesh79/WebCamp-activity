@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <title>فرم ثبت نام</title>
+    <style>
+        .flex-container{
+            display: flex;
+            padding:10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .flex-container > div{
+            margin: 30px;
+            padding:20px;
+            background-color: white;
+            border-radius: 10px;
+            align-self: flex-start;
+        }
+        label, input, a{
+            font-family: shabnam;
+            font-size:16px;
+        }
+        label, input{
+            margin:3px;
+            border-radius: 5px;
+        }
+        input{
+            width: 200px;
+            height: 40px;
+            margin-bottom: 10px;
+            vertical-align: center;
+            text-align: right;
+            padding-right: 10px;
+            border: 2px solid lightgray;
+        }
+        .submitbutton, .resetButton{
+            width:70px;
+            height:35px;
+            text-align: center;
+        }
+        .submitbutton{
+            background-color: lightskyblue;
+            border-color: lightskyblue;
+        }
+        .resetButton{
+            background-color: lightgrey;
+            border-color: lightgrey;
+        }
+        span{
+            color: red;
+        }
+        @media (max-width: 650px){
+            .flex-container{
+                flex-direction: column;
+            }
+            .flex-container > div{
+                align-self: center;
+            }
+        }
+    </style>
+</head>    
+<body lang="fa" dir="rtl" style="background-color: rgb(13,144,252);">
+    <div class="flex-container">
+        <div >
+            <form action="/action_page.php">
+                <label for="emailadd">ایمیل<span>*</span></label><br>
+                <input type="email" name="emailadd" id="emailadd" placeholder="مثال: salibrother650@gmali.com" required><br>
+
+                <label for="pss">رمز عبور<span>*</span></label><br>
+                <input type="password" name="pss" id="pss" placeholder="رمز عبور خود را وارد کنید" required><br>
+
+                <input class="submitbutton" type="submit" value="ورود"><br>
+                <a href="http://www.google.com">فراموشی رمز عبور!</a>
+            </form> 
+        </div>
+        <div>
+            <form action="/action_page.php">
+                <label for="fullname">نام و نام خانوادگی<span>*</span></label><br>
+                <input type="text" id="fullname" name="fullname" placeholder="مثال:یاسر پوزش" required><br>
+
+                <label for="phnumber">شماره تماس<span>*</span></label><br>
+                <input type="text" id="phnumber" name="phnumber" placeholder="مثال:744322" required><br>
+
+                <label for="birth">تاریخ تولد</label><br>
+                <input type="date" name="birth" id="birth"><br>
+
+                <label for="emailadd">ایمیل<span>*</span></label><br>
+                <input type="email" name="emailadd" id="emailadd" placeholder="مثال: salibrother650@gmali.com" required><br>
+
+                <label for="pss">رمز عبور<span>*</span></label><br>
+                <input type="password" name="pss" id="pss" placeholder="رمز عبور خود را وارد کنید" required><br>
+
+                <input class="submitbutton" type="submit" value="ثبت نام">
+                <input class="resetButton" type="reset" value="پاک کن!">
+            </form> 
+        </div>
+    </div>
+</body>
+</html>
