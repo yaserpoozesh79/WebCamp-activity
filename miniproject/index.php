@@ -52,16 +52,13 @@
                     if($conn -> connect_error){
                         $message1 = "<div class='alert alert-danger'>در اتصال به سرور مشکلی رخ داد</div>";
                     }else{
-                        $sql_command = "SELECT email,password FROM users";
-                        $result = $conn -> query($sql_command);
-                        $found = false;
-                        $row = '';
-                        while(($row = $result->fetch_assoc()) != NULL)
-                            if($row['email'] == $email){
-                                $found = true;
-                                break;
-                            }   
-                        if($found){
+                        $sql_command = "SELECT email,password FROM users WHERE email = ? ";
+                        $statement = $conn -> prepare($sql_command);
+                        $statement -> bind_param("s", $email);
+                        $statement -> execute();
+                        $result = $statement -> get_result();
+                        $row = $result -> fetch_assoc();
+                        if($row != NULL){
                             if($row['password'] == $pass)
                                 $message1 = "<div class='alert alert-success'>شما وارد شدید</div>";
                             else
@@ -69,8 +66,9 @@
                         }else{
                             $message1 = "<div class='alert alert-danger'>این ایمیل ثبت نشده است</div>";
                         }
-                        $conn -> close();
+                        $statement -> close();
                     }
+                    $conn -> close();
                 }
             }
         }
